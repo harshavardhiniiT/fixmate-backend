@@ -9,9 +9,10 @@ const router = express.Router();
 // Clean environment variable access
 const RAZORPAY_KEY_ID = process.env.RAZORPAY_KEY_ID;
 const RAZORPAY_KEY_SECRET = process.env.RAZORPAY_KEY_SECRET;
+console.log("DEBUG KEY:", RAZORPAY_KEY_ID);
 
 if (!RAZORPAY_KEY_ID || !RAZORPAY_KEY_SECRET) {
-    console.error('CRITICAL ERROR: Razorpay API keys are missing in .env');
+    console.error('Razorpay keys missing');
 }
 
 const razorpayInstance = new Razorpay({
